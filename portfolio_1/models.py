@@ -5,6 +5,7 @@ class Portfolio(models.Model):
     hero_text = models.TextField()
     about = models.TextField()
     cv = models.FileField(upload_to='cv', blank=True)
+    cv_url = models.URLField(null=True, blank=True)
     expertise_title = models.TextField()
     recent_work_title = models.TextField()
     get_intouch_title = models.TextField()
@@ -67,6 +68,7 @@ class Project(models.Model):
     category = models.CharField(max_length=100)
     tags = models.CharField(max_length=100)
     image = models.ImageField(upload_to='project_image', null=True, blank=True)
+    image_url = models.URLField(null=True, blank=True)
 
 
     @property
@@ -89,9 +91,10 @@ class Testimonial(models.Model):
 
 
 class SelfImage(models.Model):
-    image = models.ImageField(upload_to='self_image')
+    image = models.ImageField(upload_to='self_image', null=True, blank=True)
     name = models.CharField(max_length=100)
     is_active = models.BooleanField()
+    image_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.name

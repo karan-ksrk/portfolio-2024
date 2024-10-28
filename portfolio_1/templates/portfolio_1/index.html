@@ -125,8 +125,8 @@
                 <div class="row about-info wide" data-animate-block>
 
                     <div class="column lg-6 md-12 about-info__pic-block">
-                        <img src="{{ self_image.image.url }}"
-                            srcset="{{ self_image.image.url }} 1x, {{ self_image.image.url }} 2x" alt=""
+                        <img src="{{ self_image.image_url }}"
+                            srcset="{{ self_image.image_url }} 1x, {{ self_image.image_url }} 2x" alt=""
                             class="about-info__pic" data-animate-el>
                         <!-- <img src="{% static 'portfolio_1/images/about-photo.jpg' %}" 
                              srcset="{% static 'portfolio_1/images/about-photo.jpg' %} 1x, {% static 'portfolio_1/images/about-photo@2x.jpg' %} 2x" alt="" class="about-info__pic" data-animate-el> -->
@@ -141,7 +141,7 @@
                             <p class="attention-getter" data-animate-el>
                                 {{ portfolio.about | safe }}
                             </p>
-                            <a href="{{ portfolio.cv.url }} " class="btn btn--medium u-fullwidth"
+                            <a href="{{ portfolio.cv_url }} " class="btn btn--medium u-fullwidth"
                                 data-animate-el>Download CV</a>
 
                         </div>
@@ -250,8 +250,8 @@
                             <li class="folio-list__item column" data-animate-el>
                                 <a class="folio-list__item-link" href="#modal-{{ project.id}}">
                                     <div class="folio-list__item-pic">
-                                        <img src="{{ project.image.url}}"
-                                            srcset="{{ project.image.url}} 1x, {{ project.image.url}} 2x" alt="">
+                                        <img src="{{ project.image_url}}"
+                                            srcset="{{ project.image_url}} 1x, {{ project.image_url}} 2x" alt="">
                                     </div>
 
                                     <div class="folio-list__item-text">
@@ -285,7 +285,7 @@
                     {% for project in projects %}
                     <div id="modal-{{ project.id }}" hidden>
                         <div class="modal-popup">
-                            <img src="{{ project.image.url}}" alt="">
+                            <img src="{{ project.image_url}}" alt="">
 
                             <div class="modal-popup__desc">
                                 <h5>{{ project.title }}</h5>
